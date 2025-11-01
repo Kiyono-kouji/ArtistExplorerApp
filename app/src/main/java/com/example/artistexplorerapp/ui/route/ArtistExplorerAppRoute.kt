@@ -58,7 +58,7 @@ fun ArtistExplorerAppRoute() {
             val albumId = navBackStackEntry?.arguments?.getString("albumId")
             albums.find { it.id == albumId }?.title ?: "Album"
         }
-        else -> "Artist Explorer"
+        else -> artistInfo?.name ?: "Artist"
     }
 
     // Only show global loading/error for initial artist load (when artistInfo is null)
